@@ -105,3 +105,14 @@ npm i -D @commitlint/cli@latest @commitlint/config-conventional@latest husky@lat
 
 npm i -D commitizen cz-conventional-changelog
 ```
+
+## Testing
+
+## Vitest, a Popular Alternative to Jest
+
+Writing tests is imperative for your application.  Vitest is a great choice because it is a lightweight alternative to Jest, and runs faster.
+
+```bash
+# Install the testing library
+npm i -D vitest
+```
