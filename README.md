@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Setup for Production
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+- Install Next.js
+- Code Quality
+  - Type Checking
+  - Code Formatting with Prettier
+
+## Install Next.js
+
+Run the installation script which will walk you through the setup process to initialize a new Next.js project.
 
 ```bash
+# Run setup script
+npx create-next-app@latest
+
+# Change to project directory
+cd <project-name>
+
+# Start the development server to verify the installation
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open the development server
+open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ESM Support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Convert the project into an ESM project by adding `"type": "module"` to the `package.json` file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```json
+{
+  "type": "module"
+}
+```
 
-## Learn More
+## Code Quality
 
-To learn more about Next.js, take a look at the following resources:
+### Type Checking with Built-In `tsc` Utility
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add an explicit command to run TypeScript checks.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```json
+{
+  "type-check": "tsc -b"
+}
+```
 
-## Deploy on Vercel
+### Code Formatting with Prettier
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Install Prettier and add a script to format the code. We're also installing a plugin to format Tailwind CSS classes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Install Prettier and Tailwind CSS plugin
+npm i -D prettier prettier-plugin-tailwindcss
+
+# Add the format script to our package.json file.
+# I like to be creative with what I call mine.
+{
+  "makeover": "prettier --write ."
+}
+
+# Create a prettier.config.ts file to configure Prettier
+# Visit https://prettier.io/docs/en/configuration for documentation and a list of available options.
+# Example config:
+{
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": false,
+  "singleQuote": true
+}
+```
+
+### Code Linting with ESLint
+
+ESLint can enforce code style and quality by scanning the codebase for potential issues.
+
+```bash
+# Formatted for readability.
+npm i -D @typescript-eslint/parser \
+         eslint-config-prettier \
+         eslint-plugin-unicorn \
+         eslint-plugin-import \
+         eslint-plugin-playwright \
+         eslint-plugin-prettier \
+         eslint-plugin-simple-import-sort
+
+# Single line for copy-pasting.
+# npm install --save-dev @typescript-eslint/parser eslint-plugin-unicorn eslint-plugin-import eslint-plugin-playwright eslint-config-prettier eslint-plugin-prettier eslint-plugin-simple-import-sort
+```
+
+Check the ESLint `eslint.config.js` file for the project configuration, and don't forget to add the `lint` script to `package.json`.
+
+```json
+{
+  "lint": "eslint ."
+}
+```
+
+### Enforce Consistent Commit Messages
+
+```
+npm i -D @commitlint/cli@latest @commitlint/config-conventional@latest husky@latest
+
+npm i -D commitizen cz-conventional-changelog
+```

@@ -1,0 +1,8 @@
+node_modules
+.idea
+.next
+.husky
+.nyc_output
+public
+dist
+coverage
