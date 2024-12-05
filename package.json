@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "commit": "npx cz",
     "dev": "next dev",
     "lint": "eslint ./src",
     "lint:fix": "eslint . --fix",
@@ -21,11 +22,16 @@
   },
   "dependencies": {
     "@eslint/js": "^9.16.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.13.0",
+    "lucide-react": "^0.468.0",
     "next": "15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
     "typescript-eslint": "^8.17.0"
   },
   "devDependencies": {
