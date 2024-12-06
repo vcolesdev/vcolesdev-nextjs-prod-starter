@@ -10,16 +10,13 @@ import tseslint from "typescript-eslint";
 /**
  * Files
  */
-const files = [
-  "tests/**",
-  "**/*.{js,mjs,cjs,ts,jsx,tsx}",
-];
+const files = ["tests/**", "**/*.{js,mjs,cjs,ts,jsx,tsx}"];
 
 /**
  * Language options
  */
 const languageOptions = {
-  globals: globals.builtin
+  globals: globals.builtin,
 };
 
 /**
@@ -30,7 +27,7 @@ const plugins = {
   prettier: eslintPluginPrettier,
   "simple-import-sort": simpleImportSort,
   unicorn: eslintPluginUnicorn,
-}
+};
 
 /**
  * Rules
@@ -43,19 +40,20 @@ const rules = {
   "unicorn/no-array-callback-reference": "off",
   "unicorn/no-array-for-each": "off",
   "unicorn/no-array-reduce": "off",
-  "unicorn/prevent-abbreviations": ["error",
+  "unicorn/prevent-abbreviations": [
+    "error",
     {
-      "allowList": {
-        "e2e": true
+      allowList: {
+        e2e: true,
       },
-      "replacements": {
-        "props": false,
-        "ref": false,
-        "params": false
-      }
-    }
-  ]
-}
+      replacements: {
+        props: false,
+        ref: false,
+        params: false,
+      },
+    },
+  ],
+};
 
 /**
  * Settings
@@ -63,9 +61,9 @@ const rules = {
 const settings = {
   react: {
     version: "detect",
-    defaultVersion: "18.3.1"
-  }
-}
+    defaultVersion: "18.3.1",
+  },
+};
 
 const ignores = [
   "!/.*.{js,jsx,ts,tsx}",
@@ -78,28 +76,30 @@ const ignores = [
   "build/**",
   "dist/**",
   "node_modules/**",
-  "public/**"
+  "playwright-report/**",
+  "public/**",
+  "tests-examples/**",
 ];
 
 /** @type {import('eslint').Linter.Config[]} */
 const config = [
   {
-    files: files
+    files: files,
   },
   {
-    languageOptions: languageOptions
+    languageOptions: languageOptions,
   },
   {
-    ignores: ignores
+    ignores: ignores,
   },
   {
-    plugins: plugins
+    plugins: plugins,
   },
   {
-    rules: rules
+    rules: rules,
   },
   {
-    settings: settings
+    settings: settings,
   },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
