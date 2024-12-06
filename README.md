@@ -2,7 +2,13 @@
 
 ---
 
+## Introduction
+
+This is a personal guide for setting up Next.js projects for production.  The goal is to eventually implement production-ready features such as code quality checks, application testing, Github actions, and more in most of my projects.  This document will be updated as I integrate new features and organize more of the code. 
+
 ## Table of Contents
+
+---
 
 - Install Next.js
 - Code Quality
@@ -156,6 +162,11 @@ Navigate to the [PostgresSQL](https://www.postgresql.org/download/) website and 
 
 #### Prisma, A Modern Toolkit for Interacting with Databases
 
+```bash
+# Install Prisma
+npm i @prisma/cli @prisma/client
+```
+
 ## Testing
 
 ---
@@ -177,3 +188,15 @@ npm i -D vitest
 # Initialize Playwright
 npx playwright init
 ```
+
+## License
+
+---
+
+MIT License
+
+## Acknowledgements
+
+---
+
+This guide is heavily (thank you!) based on the [Next.js Production Guide](https://medium.com/@jan.hesters/how-to-set-up-next-js-15-for-production-in-2024-347f542922b4) by Jan Hesters.
