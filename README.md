@@ -1,4 +1,4 @@
-# Next.js Setup for Production
+# [Docs WIP] Next.js Setup for Production
 
 ## Table of Contents
 
@@ -6,6 +6,10 @@
 - Code Quality
   - Type Checking
   - Code Formatting with Prettier
+  - Code Linting with ESLint
+  - Commitlint for Conventional Commits
+- Testing
+  - Vitest, a Popular Alternative to Jest
 
 ## Install Next.js
 
@@ -98,7 +102,7 @@ Check the ESLint `eslint.config.js` file for the project configuration, and don'
 }
 ```
 
-### Enforce Consistent Commit Messages
+### Commitlint for Conventional Commits
 
 ```
 npm i -D @commitlint/cli@latest @commitlint/config-conventional@latest husky@latest
