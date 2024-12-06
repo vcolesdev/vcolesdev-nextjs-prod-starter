@@ -1,14 +1,10 @@
 # [Docs WIP] Next.js Setup for Production
 
----
-
 ## Introduction
 
 This is a personal guide for setting up Next.js projects for production.  The goal is to eventually implement production-ready features such as code quality checks, application testing, Github actions, and more in most of my projects.  This document will be updated as I integrate new features and organize more of the code. 
 
 ## Table of Contents
-
----
 
 - Install Next.js
 - Code Quality
@@ -21,8 +17,6 @@ This is a personal guide for setting up Next.js projects for production.  The go
   - End-to-End Testing
 
 ## Install Next.js
-
----
 
 Run the installation script which will walk you through the setup process to initialize a new Next.js project.
 
@@ -51,8 +45,6 @@ Convert the project into an ESM project by adding `"type": "module"` to the `pac
 ```
 
 ## Code Quality
-
----
 
 1. Type Checking
 2. Code Formatting
@@ -150,8 +142,6 @@ npm i -D commitizen cz-conventional-changelog
 
 ## Database
 
----
-
 ### Local Database
 
 #### PostgresSQL, Flexible Database Solution
@@ -168,8 +158,6 @@ npm i @prisma/cli @prisma/client
 ```
 
 ## Testing
-
----
 
 ### Application Testing
 
@@ -191,12 +179,8 @@ npx playwright init
 
 ## License
 
----
-
 MIT License
 
 ## Acknowledgements
-
----
 
 This guide is heavily (thank you!) based on the [Next.js Production Guide](https://medium.com/@jan.hesters/how-to-set-up-next-js-15-for-production-in-2024-347f542922b4) by Jan Hesters.
