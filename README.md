@@ -1,4 +1,6 @@
-# [Docs WIP] Next.js Setup for Production
+# Next.js Setup for Production
+
+This is a work in progress.
 
 ## Introduction
 
@@ -12,6 +14,9 @@ This is a personal guide for setting up Next.js projects for production.  The go
   - Code Formatting
   - Code Linting
   - Conventional Commits
+- Database
+  - Local Database
+  - Database ORM
 - Testing
   - Application Testing
   - End-to-End Testing
