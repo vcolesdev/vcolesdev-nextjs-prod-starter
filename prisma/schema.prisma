@@ -21,3 +21,5 @@ model ExampleUserProfile {
   name      String   @default("")
   isActive  Boolean  @default(true)
 }
+
+// Blog Models
